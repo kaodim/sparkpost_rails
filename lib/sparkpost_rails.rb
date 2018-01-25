@@ -34,6 +34,8 @@ module SparkPostRails
 
     attr_accessor :subaccount
 
+    attr_accessor :read_timeout
+
     def initialize
       set_defaults
     end
@@ -59,6 +61,7 @@ module SparkPostRails
       @html_content_only = false
 
       @subaccount = nil
+      @read_timeout = 60
     end
   end
 end

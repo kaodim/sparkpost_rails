@@ -382,6 +382,7 @@ module SparkPostRails
       uri = URI.parse(url)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
+      http.read_timeout = @settings[:read_timeout] || nil
 
       request = Net::HTTP::Post.new(uri.path, @headers)
       request.body = JSON.generate(@data)
